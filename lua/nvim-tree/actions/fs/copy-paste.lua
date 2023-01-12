@@ -115,20 +115,6 @@ local function do_single_paste(source, dest, action_type, action_fn)
 end
 
 local function add_to_clipboard(node, clip)
-<<<<<<< HEAD
-    if node.name == ".." then
-        return
-    end
-
-    for idx, _node in ipairs(clip) do
-        if _node.absolute_path == node.absolute_path then
-            table.remove(clip, idx)
-            return notify.info(node.absolute_path .. " removed to clipboard.")
-        end
-    end
-    table.insert(clip, node)
-    notify.info(node.absolute_path .. " added to clipboard.")
-=======
   if node.name == ".." then
     return
   end
@@ -141,7 +127,6 @@ local function add_to_clipboard(node, clip)
   end
   table.insert(clip, node)
   notify.info(utils.path_relative(node.absolute_path, core.get_cwd()) .. " added to clipboard.")
->>>>>>> 67e002ddb925c312f225ca5b73745a9f20344834
 end
 
 function M.clear_clipboard()
