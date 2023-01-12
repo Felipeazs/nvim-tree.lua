@@ -22,14 +22,13 @@ do
 
         vim.schedule(function()
             if has_notify and notify_plugin then
-                --notify_plugin(msg, level, { title = "NvimTree" })
+                notify_plugin(msg, level, { title = "NvimTree" })
                 print(msg)
             else
                 vim.notify(string.format("[NvimTree] %s", vim.inspect(msg)), level)
             end
         end)
     end
-
     for _, x in ipairs(modes) do
         M[x.name] = function(msg)
             return dispatch(x.level, msg)
