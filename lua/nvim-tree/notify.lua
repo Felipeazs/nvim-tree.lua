@@ -22,8 +22,8 @@ do
 
     vim.schedule(function()
       if has_notify and notify_plugin then
-        print(msg)
         notify_plugin(msg, level, { title = "NvimTree" })
+        vim.notify(string.format("[NvimTree] %s", vim.inspect(msg)), level)
       else
         vim.notify(string.format("[NvimTree] %s", vim.inspect(msg)), level)
       end
