@@ -25,7 +25,7 @@ do
         print(string.format("[NvimTree] %s", vim.inspect(msg)), level)
         notify_plugin(msg, level, { title = "NvimTree" })
       else
-        vim.notify(string.format("[NvimTree] %t", vim.inspect(msg)), level)
+        vim.notify(string.format("[NvimTree] %s", vim.inspect(msg)), level)
       end
     end)
   end
